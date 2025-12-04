@@ -2,11 +2,13 @@ package com.edutech.progressive.service.impl;
 
 import com.edutech.progressive.entity.Student;
 import com.edutech.progressive.service.StudentService;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+@Service
 public class StudentServiceImplArraylist implements StudentService {
 
     private static List<Student> studentList = new ArrayList<>();
