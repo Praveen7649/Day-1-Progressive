@@ -1,0 +1,35 @@
+package com.edutech.progressive.dao;
+
+
+import com.edutech.progressive.entity.Teacher;
+
+import java.util.List;
+
+public class TeacherDAOImpl implements TeacherDAO {
+
+
+    @Override
+    public int addTeacher(Teacher teacher) {
+        return -1;
+    }
+
+    @Override
+    public Teacher getTeacherById(int teacherId) {
+        return null;
+    }
+
+    @Override
+    public void updateTeacher(Teacher teacher) {
+
+    }
+
+    @Override
+    public void deleteTeacher(int teacherId) {
+
+    }
+
+    @Override
+    public List<Teacher> getAllTeachers() {
+        return List.of();
+    }
+}
