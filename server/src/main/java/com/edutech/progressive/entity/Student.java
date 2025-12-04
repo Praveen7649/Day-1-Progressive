@@ -1,8 +1,15 @@
 package com.edutech.progressive.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.Date;
 
+@Entity
 public class Student implements Comparable<Student> {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int studentId;
     private String fullName;
     private Date dateOfBirth;
@@ -21,7 +28,7 @@ public class Student implements Comparable<Student> {
         this.email = email;
         this.address = address;
     }
-    
+
     public int getStudentId() {
         return studentId;
     }

@@ -2,9 +2,11 @@ package com.edutech.progressive.controller;
 
 import com.edutech.progressive.entity.Student;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@RestController
 public class StudentController {
 
     public ResponseEntity<List<Student>> getAllStudents() {
@@ -31,7 +33,7 @@ public class StudentController {
         return null;
     }
 
-    public ResponseEntity<Integer> addStudentToArrayList(Student student) {
+    public ResponseEntity<Void> addStudentToArrayList() {
         return null;
     }
 

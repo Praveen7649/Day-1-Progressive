@@ -1,8 +1,15 @@
 package com.edutech.progressive.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.Comparator;
 
+@Entity
 public class Teacher implements Comparable<Teacher> {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int teacherId;
     private String fullName;
     private String subject;
