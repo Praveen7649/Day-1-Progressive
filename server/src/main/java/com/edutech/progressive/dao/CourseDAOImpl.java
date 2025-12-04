@@ -21,12 +21,12 @@ public class CourseDAOImpl implements CourseDAO {
 
         try {
             connection = DatabaseConnectionManager.getConnection();
-            String sql = "INSERT INTO course (course_name, description, teacher_id) VALUES (?, ?, ?)";
+            String sql = "INSERT INTO Course (course_name, description, teacher_id) VALUES (?, ?, ?)";
             statement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
 
             statement.setString(1, course.getCourseName());
             statement.setString(2, course.getDescription());
-            statement.setInt(3, course.getTeacherId());
+            statement.setInt(3, course.getTeacher().getTeacherId());
 
             statement.executeUpdate();
 
@@ -89,7 +89,7 @@ public class CourseDAOImpl implements CourseDAO {
 
             statement.setString(1, course.getCourseName());
             statement.setString(2, course.getDescription());
-            statement.setInt(3, course.getTeacherId());
+            statement.setInt(3, course.getTeacher().getTeacherId());
             statement.setInt(4, course.getCourseId());
 
             statement.executeUpdate();

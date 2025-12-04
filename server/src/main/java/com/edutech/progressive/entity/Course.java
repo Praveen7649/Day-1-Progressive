@@ -1,9 +1,6 @@
 package com.edutech.progressive.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Course {
@@ -12,7 +9,9 @@ public class Course {
     private int courseId;
     private String courseName;
     private String description;
-    private int teacherId;
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "teacher_id")
+    private Teacher teacher;
 
     public Course() {
     }
@@ -21,7 +20,7 @@ public class Course {
         this.courseId = courseId;
         this.courseName = courseName;
         this.description = description;
-        this.teacherId = teacherId;
+        this.teacher.setTeacherId(teacherId);
     }
 
     public int getCourseId() {
@@ -48,11 +47,11 @@ public class Course {
         this.description = description;
     }
 
-    public int getTeacherId() {
-        return teacherId;
+    public Teacher getTeacher() {
+        return teacher;
     }
 
-    public void setTeacherId(int teacherId) {
-        this.teacherId = teacherId;
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
     }
 }
